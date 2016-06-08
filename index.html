@@ -11,28 +11,11 @@
 </head>
 <body>
     <span id="test">获取验证码</span>
-    <script src="countDown.js"></script>
+    <script src='countDown.js'></script>
     <script>
         var testDom = document.getElementById('test');
-        var left = 60;
-        var countDownIntervalId;
-        var flag = 1;
-        testDom.onclick = function(){
-            if (flag) {
-                flag =0;
-                testDom.innerHTML='等待'+ left + 'S'; 
-                countDownIntervalId = setInterval(function() {
-                    left=left-1;
-                    testDom.innerHTML='等待'+ left + 'S';  
-                    if (left==55) {
-                        clearInterval(countDownIntervalId);
-                        testDom.innerHTML='获取验证码'; 
-                        left = 60;
-                        flag = 1;
-                    }
-                }, 1000);    
-            }
-            
+        testDom.onclick = function  () {
+            $.countDown(testDom,60); 
         };
     </script>
 </body>
