@@ -17,9 +17,9 @@ var CountDown = {
 
         el.innerHTML = '等待' + leftTime + 'S';
         var countDownIntervalId = setInterval(function() {
-            leftTime = leftTime - 1;
+            leftTime -= 1;
             el.innerHTML = '等待' + leftTime + 'S';
-            if (leftTime == 0) {
+            if (leftTime === 0) {
                 clearInterval(countDownIntervalId);
                 el.innerHTML = '获取验证码';
                 leftTime = _left;
