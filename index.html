@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CountDownModule</title>
     <style>
-        span {
-            border: 1px solid black;
-        }
+    span {
+        border: 1px solid black;
+    }
     </style>
 </head>
+
 <body>
     <span id="test">获取验证码</span>
+    <span id="test2">获取验证码2</span>
     <script src='countDown.js'></script>
     <script>
-        var testDom = document.getElementById('test');
-        testDom.onclick = function  () {
-            $.countDown(testDom,60); 
-        };
+    var testDom = document.getElementById('test');
+    var testDom2 = document.getElementById('test2');
+    testDom.onclick = function() {
+        new CountDown().countDown(testDom, 10);
+    };
+    testDom2.onclick = function() {
+        new CountDown().countDown(testDom2, 10);
+    };
+
     </script>
 </body>
+
 </html>
