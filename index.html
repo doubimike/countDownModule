@@ -19,12 +19,11 @@
     var testDom = document.getElementById('test');
     var testDom2 = document.getElementById('test2');
     testDom.onclick = function() {
-        new CountDown().countDown(testDom, 10);
+        CountDown.countDown(testDom, 10);
     };
     testDom2.onclick = function() {
-        new CountDown().countDown(testDom2, 10);
+        CountDown.countDown(testDom2, 10);
     };
-
     </script>
 </body>
 

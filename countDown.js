@@ -6,17 +6,15 @@
  * @return {[type]}          [无]
  */
 
-function CountDown() {
-    this.flag = 1;
-}
+var CountDown = {
+    countDown: function(el, leftTime) {
+        // 把初始的倒计时缓存下来，最后重置用。
+        var _left = leftTime;
 
-CountDown.prototype.countDown = function(el, leftTime) {
-    var _left = leftTime;
-    if (this.flag) {
-        this.flag = 0;
         el.onclick = function() {
             return false;
         };
+
         el.innerHTML = '等待' + leftTime + 'S';
         var countDownIntervalId = setInterval(function() {
             leftTime = leftTime - 1;
@@ -25,9 +23,8 @@ CountDown.prototype.countDown = function(el, leftTime) {
                 clearInterval(countDownIntervalId);
                 el.innerHTML = '获取验证码';
                 leftTime = _left;
-                this.flag = 1;
                 el.onclick = function() {
-                    new CountDown().countDown(el, leftTime);
+                    CountDown.countDown(el, leftTime);
                 };
             }
         }, 1000);
