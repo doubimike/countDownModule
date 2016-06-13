@@ -1,6 +1,6 @@
 /**
  * [countDown description]
- * $对象的flag属性即是flag，就不用污染全局对象了，现在只支持onclick，不支持addeventlistener。
+ * $对象的flag属性即是flag，就不用污染全局对象了，现在只支持onclick，不支持addeventlistener。从对象的写法改成构造函数的写法。解决一个页面只能绑定一个构造器的问题。
  * @param  {[obj]} el       [需要绑定的dom元素]
  * @param  {[num]} leftTime [总共需要倒计的时间]
  * @return {[type]}          [无]
